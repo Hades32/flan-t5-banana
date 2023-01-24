@@ -23,6 +23,9 @@ def inference(model_inputs:dict) -> dict:
     prompt = model_inputs.get('prompt', None)
     if prompt == None:
         return {'message': "No prompt provided"}
+    input_seed = model_inputs.get("seed", None)
+    if input_seed != None:
+            generator = torch.Generator("cuda").manual_seed(input_seed)
     
     # Run the model
     input_ids = tokenizer(prompt, return_tensors="pt").input_ids.to("cuda")
