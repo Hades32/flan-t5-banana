@@ -4,11 +4,11 @@
 # In this example: A Huggingface BERT model
 
 from transformers import T5Tokenizer, T5ForConditionalGeneration
-import consts
+from app_consts import model_name
 
 def download_model():
-    tokenizer = T5Tokenizer.from_pretrained(consts.model_name)
-    model = T5ForConditionalGeneration.from_pretrained(consts.model_name)
+    tokenizer = T5Tokenizer.from_pretrained(model_name)
+    model = T5ForConditionalGeneration.from_pretrained(model_name)
 
 if __name__ == "__main__":
     download_model()
