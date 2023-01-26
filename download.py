@@ -1,8 +1,6 @@
 # In this file, we define download_model
 # It runs during container build time to get model weights built into the container
 
-# In this example: A Huggingface BERT model
-
 from transformers import T5Tokenizer, T5ForConditionalGeneration
 
 def download_model():
