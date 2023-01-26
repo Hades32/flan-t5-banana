@@ -4,9 +4,9 @@
 # In this example: A Huggingface BERT model
 
 from transformers import T5Tokenizer, T5ForConditionalGeneration
-from app_consts import model_name
 
 def download_model():
+    model_name = "google/flan-t5-xl"
     tokenizer = T5Tokenizer.from_pretrained(model_name)
     model = T5ForConditionalGeneration.from_pretrained(model_name)
 
